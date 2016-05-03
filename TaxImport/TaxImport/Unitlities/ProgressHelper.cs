@@ -3,6 +3,11 @@
     public class ProgressHelper
     {
         /// <summary>
+        /// Defines how many lines should be processed one time
+        /// </summary>
+        public const int ReportLine = 35;
+
+        /// <summary>
         /// total size
         /// </summary>
         private readonly long _size = 0;
@@ -12,7 +17,6 @@
         /// </summary>
         private long _current = 0;
 
-        public const int ReportLine = 35;
 
         public ProgressHelper(long total)
         {            

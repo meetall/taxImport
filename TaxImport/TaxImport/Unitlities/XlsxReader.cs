@@ -48,14 +48,14 @@ namespace TaxImport.Unitlities
                     //.Where(item =>TaxInfoValidator.IsValidTaxInfo(item,resultReport))
                 ;
 
-                var enumerable = query as IList<Row> ?? query.ToList();
-                counter += enumerable.Count();
+                var enumerable = query as IList<Row> ?? query.ToList();                
 
                 foreach (var q in enumerable)
                 {
                     var tempStringArr = new string[4]{q[0],q[1],q[2],q[3]};
                     if (TaxInfoValidator.IsValidTaxInfo(tempStringArr, resultReport))
                     {
+                        counter++;
                         taxModelContainer.TaxInfoes.Add(new TaxInfo()
                         {
                             Account = q[0],
